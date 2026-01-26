@@ -29,28 +29,41 @@ app:
 platforms:
   enabled: true                         # 是否启用热榜平台抓取
   sources:
-    - id: "toutiao"
-      name: "今日头条"
-    - id: "baidu"
-      name: "百度热搜"
+    # - id: "toutiao"
+    #   name: "今日头条"
+    # - id: "baidu"
+    #   name: "百度热搜"
     - id: "wallstreetcn-hot"
       name: "华尔街见闻"
-    - id: "thepaper"
-      name: "澎湃新闻"
+    # - id: "thepaper"
+    #   name: "澎湃新闻"
     - id: "bilibili-hot-search"
       name: "bilibili 热搜"
-    - id: "cls-hot"
-      name: "财联社热门"
-    - id: "ifeng"
-      name: "凤凰网"
-    - id: "tieba"
-      name: "贴吧"
-    - id: "weibo"
-      name: "微博"
-    - id: "douyin"
-      name: "抖音"
+    # - id: "cls-hot"
+    #   name: "财联社热门"
+    # - id: "ifeng"
+    #   name: "凤凰网"
+    # - id: "tieba"
+    #   name: "贴吧"
+    # - id: "weibo"
+    #   name: "微博"
+    # - id: "douyin"
+    #   name: "抖音"
     - id: "zhihu"
       name: "知乎"
+
+
+    - id: "github"
+      name: "GitHub"
+    - id: "juejin"
+      name: "掘金"
+    - id: "hackernews"
+      name: "Hacker News"
+    - id: "v2ex"
+      name: "V2EX"
+    - id: "sspai"
+      name: "少数派"
+
 
 
 
@@ -97,10 +110,10 @@ rss:
       url: "http://www.ruanyifeng.com/blog/atom.xml"
       # max_age_days: 7               # 示例：推送7天内的文章（更新较慢的博客）
     
-    - id: "yahoo-finance"
-      name: "雅虎财经"
-      url: "https://finance.yahoo.com/news/rssindex"
-      enabled: false                  # 禁用
+    # - id: "yahoo-finance"
+    #   name: "雅虎财经"
+    #   url: "https://finance.yahoo.com/news/rssindex"
+    #   enabled: false                  # 禁用
 
     # 自定义源示例
     # - id: "custom-feed"
@@ -129,7 +142,7 @@ rss:
 #    • 适用场景：避免重复信息干扰
 # ===============================================================
 report:
-  mode: "current"                     # 可选: daily | current | incremental
+  mode: "incremental"                     # 可选: daily | current | incremental
   display_mode: "keyword"             # 分组维度: keyword | platform
                                       # keyword: 按关键词分组显示（默认）
                                       # platform: 按平台/来源分组显示
@@ -227,9 +240,9 @@ notification:
   # 💡 想要精准定时？建议使用 Docker 部署在个人服务器上
   push_window:
     enabled: false                    # 是否启用推送时间窗口控制
-    start: "20:00"                    # 开始时间（北京时间）
+    start: "08:00"                    # 开始时间（北京时间）
     end: "22:00"                      # 结束时间（北京时间）
-    once_per_day: true                # true=窗口内只推送一次，false=窗口内每次执行都推送
+    once_per_day: false                # true=窗口内只推送一次，false=窗口内每次执行都推送
 
   # 推送渠道配置
   channels:
@@ -450,7 +463,7 @@ ai_analysis:
 # 模型配置见上方 ai 配置段
 # ===============================================================
 ai_translation:
-  enabled: false                    # 是否启用翻译功能
+  enabled: true                    # 是否启用翻译功能
 
   # 翻译目标语言
   # 格式：自然语言描述
