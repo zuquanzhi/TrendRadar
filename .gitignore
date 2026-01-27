@@ -121,12 +121,9 @@ temp/
 tmp/
 
 # Custom Exclusions
-config/
 !output/index.html
 !config/config.example.yaml
 
-# Configuration (Sensitive)
-config/config.yaml
 
 # Demo/Generated files
 demo_report_v2.html
