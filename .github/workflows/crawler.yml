@@ -2,14 +2,14 @@ name: Get Hot News
 
 on:
   schedule:
-    # 📝 修改运行时间：只改第一个数字（0-59），表示每小时第几分钟运行
-    # 📝 Change time: Only modify the first number (0-59) = minute of each hour
+    # 📝 每天北京时间 19:00（UTC 11:00）推送当日汇总
+    # 📝 Daily summary push at 7 PM Beijing time (UTC 11:00)
     #
     # 示例 / Examples:
     #   "15 * * * *"     → 每小时第15分钟 / minute 15 every hour
     #   "30 0-14 * * *"  → 北京时间 8:00-22:00 每小时第30分钟 / Beijing 8am-10pm
     #
-    - cron: "33 * * * *"
+    - cron: "0 11 * * *"
 
   workflow_dispatch:
 
